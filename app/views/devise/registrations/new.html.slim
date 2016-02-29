@@ -1,0 +1,43 @@
+h1 = t('form.new_user_reg')
+
+div class = 'col-lg-5 well'
+  = form_for resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true, :class => 'form-horizontal'} do |f|
+    - unless devise_error_messages! == ""
+      div class='panel panel-danger'
+        div class='panel-heading'
+          h3 class='panel-title' = devise_error_messages!
+
+    fieldset
+      div class='form-group'
+        label class='col-lg-4 control-label' = t('form.name')
+        div class='col-lg-8'
+          = f.text_field :name, :placeholder => t('form.name')
+
+    fieldset
+      div class='form-group'
+        label class='col-lg-4 control-label' = t('form.email')
+        div class='col-lg-8'
+          = f.text_field :email, :placeholder => t('form.email')
+
+    fieldset
+      div class='form-group'
+        label class='col-lg-4 control-label' = t('form.password')
+        div class='col-lg-8'
+          = f.text_field :password, :placeholder => t('form.password')
+
+    fieldset
+      div class='form-group'
+        label class='col-lg-4 control-label' = t('form.confirmation')
+        div class='col-lg-8'
+          = f.text_field :password_confirmation, :placeholder => t('form.confirmationholder')
+
+    fieldset
+      div class='form-group'
+        label class='col-lg-4 control-label' = t('form.avatar')
+        div class='col-lg-8'
+          = f.file_field :avatar
+
+    div class='form-group'
+      div class='col-lg-8'
+        = f.submit t('form.registration_button'), class: 'btn btn-large btn-primary'
+

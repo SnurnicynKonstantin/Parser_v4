@@ -1,0 +1,25 @@
+div class='navbar navbar-default navbar-fixed-top'
+  div class='container'
+    div class='navbar-header'
+      = link_to t('header.brand'), root_path, class:'navbar-brand'
+    ul class='nav navbar-nav navbar-right'
+      - if user_signed_in?
+        li
+          a href='/users/#{current_user.id}' #{current_user.name} #{image_tag( current_user.avatar.avatar, :style => 'border-radius: 160px 160px 160px 160px') if current_user.avatar}
+        li
+          = link_to t('autorization.signout'), destroy_user_session_path, :method => :delete
+      - else
+        li
+          = link_to t('autorization.signin'), new_user_session_path
+        li
+          = link_to t('autorization.registration'), new_user_registration_path
+      - if cookies[:educator_locale] == 'en'
+        li class='active'
+          = link_to t('header.lang.en'), change_locale_path(:en)
+        li
+          = link_to t('header.lang.ru'), change_locale_path(:ru)
+      - else
+        li
+          = link_to t('header.lang.en'), change_locale_path(:en)
+        li class='active'
+          = link_to t('header.lang.ru'), change_locale_path(:ru)

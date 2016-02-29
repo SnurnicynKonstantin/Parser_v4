@@ -1,0 +1,12 @@
+h1 #{t('user.user_data')}: #{@user.name}
+
+p
+  strong #{t('form.email')}: #{@user.email}
+
+p
+  strong #{t('form.avatar')}: #{image_tag @user.avatar.thumb }
+
+= form_tag('/courses', remote: true) do
+  = submit_tag(t('user.new_data_button'), class:'btn btn-large btn-primary get-graphic')
+
+div id='graphic' style='min-width: 310px; height: 400px; margin: 0 auto'

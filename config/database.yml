@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+  username: konstantin
+  password: 1234
+
+development:
+  <<: *default
+  database: Parser_v4_development
+
+test:
+  <<: *default
+  database: Parser_v4_test
+
+production:
+  <<: *default
+  database: Parser_v4_production
+  username: Parser_v4
+  password: <%= ENV['PARSER_V4_DATABASE_PASSWORD'] %>

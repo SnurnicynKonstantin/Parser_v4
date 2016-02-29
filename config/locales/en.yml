@@ -1,0 +1,40 @@
+en:
+  activerecord:
+    attributes:
+      article:
+        title: "Title"
+        body: "Body"
+  header:
+    brand: "Exchange Rates"
+    lang:
+      en: "English"
+      ru: "Russian"
+  autorization:
+    signin: "Login"
+    registration: "Registration"
+    signout: "Exit"
+  form:
+    email: "Mail address"
+    emailholder: "Mail"
+    password: "Password"
+    new_user_reg: "New user"
+    name: "Name"
+    confirmation: "Confirmation password"
+    confirmationholder: "Confirmation"
+    avatar: "Avatar"
+    registration_button: "Sign up"
+    registration_index: "Registration"
+    err_login: "Invalid email/password combination"
+    new_user: "User was successfully created."
+    new_user_not_register: "You are still not registered ?"
+  user:
+    user_data: "User data"
+    new_data_button: "Get the new data"
+  root_page:
+    head: "CONTROL OF EXCHANGE RATES"
+    text: "We invite you to take advantage of our complimentary sources of data in graphs format for the exchange of cash foreign exchange rates in Russia. This convenient service will be extremely useful:"
+    punct1: "Online shopping, for the conversion of prices for goods and services relevant to their regions of exchange rates;"
+    punct2: "Sites and portals to increase the information content of its own;"
+    punct3: "Analytical programs and Web services for use in its internal calculations and conversions"
+    log_or_reg: "To access the service, follow"
+    or: "or"

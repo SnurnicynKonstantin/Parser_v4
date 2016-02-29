@@ -1,0 +1,22 @@
+h1 = t('autorization.signin')
+
+div class = 'col-lg-4 well'
+  = form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'form-horizontal'}) do |f|
+    fieldset
+      div class='form-group'
+        label class='col-lg-2 control-label' = t('form.email')
+        div class='col-lg-8'
+          = f.text_field :email, :placeholder => t('form.emailholder')
+
+      div class='form-group'
+        label class='col-lg-2 control-label' = t('form.password')
+        div class='col-lg-8'
+          = f.password_field :password, :placeholder => t('form.password')
+
+      div class='form-group'
+        div class='col-lg-8'
+          = f.submit t('autorization.signin'), class: 'btn btn-large btn-primary'
+
+div class = 'row'
+  div class='col-lg-8'
+    p #{ t('form.new_user_not_register') } #{ link_to t('autorization.registration'), new_user_registration_path }
