@@ -13,6 +13,7 @@ div class='navbar navbar-default navbar-fixed-top'
           = link_to t('autorization.signin'), new_user_session_path
         li
           = link_to t('autorization.registration'), new_user_registration_path
+
       - if cookies[:educator_locale] == 'en'
         li class='active'
           = link_to t('header.lang.en'), change_locale_path(:en)

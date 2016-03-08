@@ -20,3 +20,12 @@ div class = 'col-lg-4 well'
 div class = 'row'
   div class='col-lg-8'
     p #{ t('form.new_user_not_register') } #{ link_to t('autorization.registration'), new_user_registration_path }
+
+div class = 'col-lg-4 well'
+  ul
+    li
+      = link_to 'Twitter', user_omniauth_authorize_path(:twitter)
+    li
+      = link_to 'Facebook', user_omniauth_authorize_path(:facebook)
+    li
+      = link_to 'LinkedIn', user_omniauth_authorize_path(:linkedin)

@@ -13,7 +13,7 @@ class ParserCourse
     data = prepare_data(URL)
 
     date = Time.parse(data['query']['created']) + TIME_ZONE * ONE_HOUR
-    date = date.strftime("%Y-%m-%e %H")
+    date = date.strftime("%Y-%m-%d %H")
     @course.[]=('Date',date)
 
     data['query']['results']['rate'].each do |array|
