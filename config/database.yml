@@ -10,7 +10,7 @@ development:
   <<: *default
   database: Parser_v4_development
 
-test:
+test: &test
   <<: *default
   database: Parser_v4_test
 
@@ -19,3 +19,6 @@ production:
   database: Parser_v4_production
   username: Parser_v4
   password: <%= ENV['PARSER_V4_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
