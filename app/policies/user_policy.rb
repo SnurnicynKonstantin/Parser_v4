@@ -1,13 +1,13 @@
 class UserPolicy
-  attr_reader :current_user, :model
+  attr_reader :user, :model
 
-  def initialize(current_user, model)
-    @current_user = current_user
-    @user = model
+  def initialize(user, model)
+    @user = user
+    @model = model
   end
 
 
   def show?
-    @current_user.admin? or @current_user == @user
+    user == model or user.admin?
   end
 end

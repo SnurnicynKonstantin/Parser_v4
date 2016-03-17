@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1>There are <%= @count_courses %> values of Courses</h1>
+<p>
+  <%= @all_courses.each do |course|
+        puts "id = #{course.id}, value usd = #{course.usd} <br>"
+      end
+  %>
+</p>
+</body>
+</html>

@@ -6,9 +6,16 @@ Rails.application.routes.draw do
     get '/users/auth/:provider/setup', :to => 'omniauth_callbacks#setup'
   end
 
+  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
+
   root 'home#index'
 
-  resources :users
+  resources :users do
+    member do
+      post :vote_up
+      post :vote_down
+    end
+  end
 
   resources :courses
 

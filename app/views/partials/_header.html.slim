@@ -5,9 +5,9 @@ div class='navbar navbar-default navbar-fixed-top'
     ul class='nav navbar-nav navbar-right'
       - if user_signed_in?
         li
-          a href='/users/#{current_user.id}' #{current_user.name} #{image_tag( current_user.avatar.avatar, :style => 'border-radius: 160px 160px 160px 160px') if current_user.avatar}
+          a href='/users/#{current_user.name}' #{current_user.name} #{image_tag( current_user.avatar.avatar, :style => 'border-radius: 160px 160px 160px 160px') if current_user.avatar}
         li
-          = link_to t('autorization.signout'), destroy_user_session_path, :method => :delete
+          = link_to t('autorization.signout'), destroy_user_session_path, :method => :delete, id: 'exit'
       - else
         li
           = link_to t('autorization.signin'), new_user_session_path
