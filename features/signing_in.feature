@@ -6,5 +6,15 @@ Feature: Signing in
     When the user submits valid signin information
     Then he should see his profile page
     And he should see a signout link
+
+  Scenario: Successful signout
+    Given the user has an account
+    And sign in
+    When the user signout
+    Then he should see main page
+
+  Scenario: Successful signout
+    Given the user has an account
+    And sign in
     When the user signout
     Then he should see main page

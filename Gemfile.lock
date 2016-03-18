@@ -36,6 +36,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.4.0)
     arel (6.0.3)
     bcrypt (3.1.10)
     bcrypt-ruby (3.1.2)
@@ -44,6 +45,13 @@ GEM
     bond (0.5.1)
     builder (3.2.2)
     byebug (8.2.2)
+    capybara (2.6.2)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -57,7 +65,34 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
+    cucumber (2.3.2)
+      builder (>= 2.1.2)
+      cucumber-core (~> 1.4.0)
+      cucumber-wire (~> 0.0.1)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 3.2.0)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.1.2)
+    cucumber-core (1.4.0)
+      gherkin (~> 3.2.0)
+    cucumber-rails (1.4.3)
+      capybara (>= 1.1.2, < 3)
+      cucumber (>= 1.3.8, < 3)
+      mime-types (>= 1.16, < 4)
+      nokogiri (~> 1.5)
+      railties (>= 3, < 5)
+    cucumber-wire (0.0.1)
+    database_cleaner (1.5.1)
     debug_inspector (0.0.2)
+    delayed_job (4.1.1)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.1.0)
+      activerecord (>= 3.0, < 5)
+      delayed_job (>= 3.0, < 5)
+    delayed_job_web (1.2.10)
+      activerecord (> 3.0.0)
+      delayed_job (> 2.0.3)
+      sinatra (>= 1.4.4)
     devise (3.5.6)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -65,6 +100,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    diff-lcs (1.2.5)
     domain_name (0.5.20160128)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -73,6 +109,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     figaro (1.1.1)
       thor (~> 0.14)
+    friendly_id (5.1.0)
+      activerecord (>= 4.0.0)
+    gherkin (3.2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     hashie (3.4.3)
@@ -99,6 +138,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    multi_test (0.1.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     netrc (0.11.0)
@@ -161,6 +201,11 @@ GEM
     rails-i18n (4.0.8)
       i18n (~> 0.7)
       railties (~> 4.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.4)
     railties (4.2.5.1)
       actionpack (= 4.2.5.1)
       activesupport (= 4.2.5.1)
@@ -183,6 +228,23 @@ GEM
       rack (>= 1.0)
       rack-test (~> 0.6.2)
       ripl (>= 0.7.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-rails (3.4.2)
+      actionpack (>= 3.0, < 4.3)
+      activesupport (>= 3.0, < 4.3)
+      railties (>= 3.0, < 4.3)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
     sass (3.4.21)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -193,6 +255,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    shoulda-matchers (3.0.1)
+      activesupport (>= 4.0.0)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -214,9 +278,13 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    statistics2 (0.54)
     temple (0.7.6)
     thor (0.19.1)
     thread_safe (0.3.5)
+    thumbs_up (0.6.8)
+      activerecord (~> 4.2.x)
+      statistics2
     tilt (2.0.2)
     turbolinks (2.5.3)
       coffee-rails
@@ -240,6 +308,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -247,10 +317,16 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (= 3.1.2)
   byebug
+  capybara (~> 2.6, >= 2.6.2)
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.1.0)
+  cucumber-rails
+  database_cleaner
+  delayed_job_active_record
+  delayed_job_web
   devise
   figaro
+  friendly_id (~> 5.1.0)
   highcharts-rails
   jbuilder (~> 2.0)
   jquery-rails
@@ -264,11 +340,15 @@ DEPENDENCIES
   pundit
   rails (= 4.2.5.1)
   rails-i18n (~> 4.0.0)
+  rails_12factor
   rest-client (~> 1.8.0)
+  rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  shoulda-matchers (= 3.0.1)
   slim-rails
   spring
+  thumbs_up
   turbolinks
   tux
   uglifier (>= 1.3.0)

@@ -34,9 +34,20 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'highcharts-rails'
 gem 'pundit'
 gem 'figaro'
+gem 'delayed_job_active_record'
+gem 'rspec-rails'
+gem 'shoulda-matchers', '3.0.1'
+gem 'delayed_job_web'
+gem 'friendly_id', '~> 5.1.0'
+gem 'thumbs_up'
+
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
+  gem 'capybara', '~> 2.6', '>= 2.6.2'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -45,3 +56,16 @@ group :development do
   gem 'spring'
 end
 
+#mail catcher
+
+#rescue (shaduler - расписание или )
+#redis (redis-server)
+
+#app/jobs
+
+
+
+#selenium - > cocumber
+#rspec
+
+#simplecoff

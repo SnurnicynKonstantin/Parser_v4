@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   get '/change_locale/:locale', to: 'sessions#change_locale', as: :change_locale
 
+  get '/:id', to: 'users#show', as: :pretty_url
+
 end
