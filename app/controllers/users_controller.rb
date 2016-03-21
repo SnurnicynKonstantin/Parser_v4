@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  skip_before_filter :verify_authenticity_token, :only => :add_video
 
   def show
     @user = User.friendly.find(params[:id])
     @current_user = current_user
     authorize @user
+  end
+
+  def add_video
+    render nothing: true, status: 200
   end
 
   def vote_up

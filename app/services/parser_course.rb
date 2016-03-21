@@ -24,8 +24,8 @@ class ParserCourse
 
   private
 
-  def prepare_data(url)
-    JSON.parse(RestClient.get(url))
-  end
+    def prepare_data(url)
+      JSON.parse(RestClient.get(url))
+    end
 
 end

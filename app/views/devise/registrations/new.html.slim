@@ -2,7 +2,7 @@ h1 = t('form.new_user_reg')
 
 div class = 'col-lg-5 well'
   = form_for resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true, :class => 'form-horizontal'} do |f|
-    - unless devise_error_messages! == ""
+    - if resource.errors.present?
       div class='panel panel-danger'
         div class='panel-heading'
           h3 class='panel-title' = devise_error_messages!

@@ -8,10 +8,12 @@ ul class='lead'
   li = t('root_page.punct3')
 
 div class='row'
-  div class = 'col-lg-6' #{ image_tag 'chart.png', :style => 'width: 600px' }
+  div class = 'col-lg-6'
+    = image_tag 'chart.png', :style => 'width: 600px'
   - unless signed_in?
     div class='col-lg-4 col-lg-offset-1 well' style = 'text-align: center'
       p class='lead' = t('root_page.log_or_reg')
-      p #{ link_to t('autorization.signin'), new_user_session_path, class: 'btn btn-primary' }
+      p
+        = link_to t('autorization.signin'), new_user_session_path, class: 'btn btn-primary'
       p class='lead' = t('root_page.or')
       p #{ link_to t('form.registration_index'), new_user_registration_path, class: 'btn btn-primary' }
