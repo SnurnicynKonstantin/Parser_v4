@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   end
 
   def add_video
+    param = params[:user]
+    @current_user.video = param[:video]
     render nothing: true, status: 200
   end
 

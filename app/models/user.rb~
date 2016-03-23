@@ -34,36 +34,30 @@ class User < ActiveRecord::Base
       if user
         user.providers.create(provider: auth.provider, uid: auth.uid)
       else
-        #self.mail = auth.info.email.nil? ? auth.uid + '@mail.ru' : auth.info.email
-        @there_is_provider = false
-        user = User.new(
-                 name: auth.extra.raw_info.name
-               )
-        @there_is_provider = true
+        mail = auth.info.email.nil? ? auth.uid + '@mail.ru' : auth.info.email
+        user = User.new(name: auth.extra.raw_info.name,
+                           email: mail,
+        )
+
         if user.save
           user.providers.create(provider: auth.provider, uid: auth.uid)
         end
+
       user
       end
     end
   end
 
   def password_required?
-    @there_is_provider != true
+    true
   end
 
   def email_required?
-    @there_is_provider != true
+    true
   end
 
   def set_success(format, opts)
     self.success = true
-  end
-
-  searchable do
-    text :name
-    text :email
-    time :created_at
   end
 
 end

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users, :controllers => { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks'}
 
   devise_scope :user do
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
     member do
       post :vote_up
       post :vote_down
+      post :add_video
     end
   end
 
@@ -22,5 +25,7 @@ Rails.application.routes.draw do
   get '/change_locale/:locale', to: 'sessions#change_locale', as: :change_locale
 
   get '/:id', to: 'users#show', as: :pretty_url
+
+  get '/seach/:query', to: 'find_users#index', as: :seach
 
 end

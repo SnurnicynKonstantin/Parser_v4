@@ -10,11 +10,11 @@ class UserPolicy
     user == model or user.admin?
   end
 
-  def vote_up?
+  def vote_up
     user
   end
 
-  def vote_down?
+  def vote_down
     user
   end
 
