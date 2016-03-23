@@ -18,4 +18,8 @@ class UserPolicy
     user
   end
 
+  def search?
+    user
+  end
+
 end

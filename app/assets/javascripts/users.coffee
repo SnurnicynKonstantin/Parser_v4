@@ -62,6 +62,7 @@ $(document).ready ->
   $('.get-graphic').click ->
     build_gpaphic()
   build_gpaphic()
+
   return
 
 # ---

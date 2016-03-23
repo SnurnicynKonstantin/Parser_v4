@@ -23,4 +23,12 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     current_user.unvote_for(@user)
   end
+
+  def search
+    @search = Sunspot.search( User ) do
+      fulltext params[:name]
+    end
+
+    @user = @search.results.first
+  end
 end

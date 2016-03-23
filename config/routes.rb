@@ -26,6 +26,6 @@ Rails.application.routes.draw do
 
   get '/:id', to: 'users#show', as: :pretty_url
 
-  get '/seach/:query', to: 'find_users#index', as: :seach
+  post '/search', to: 'users#search', as: :search
 
 end

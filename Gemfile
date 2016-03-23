@@ -36,10 +36,16 @@ gem 'pundit'
 gem 'figaro'
 gem 'delayed_job_active_record'
 gem 'rspec-rails'
+gem 'rspec-mocks'
 gem 'shoulda-matchers', '3.0.1'
 gem 'delayed_job_web'
 gem 'friendly_id', '~> 5.1.0'
 gem 'thumbs_up'
+gem 'activeadmin', '~> 1.0.0.pre2'
+gem 'carrierwave-video'
+gem 'simplecov', :require => false, :group => :test
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 gem 'rails_12factor', group: :production
 

@@ -1,0 +1,1 @@
+$('.search_info').text( "Пользователь найден: Имя = " + "<%= @user.name %>" + " Email = " + "<%= @user.email %>")
