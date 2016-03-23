@@ -7,20 +7,12 @@ class CoursesController < ApplicationController
 
   def create
     authorize Course
-    GetCoursesInfoJob.perform_later
-    parser = ParserCourse.new
-    parser.get_current_course
-    parse_course = parser.course
+    course = Course.create_course
 
-    one_course = Course.find_or_create_by(date: DateTime.parse(parse_course['Date'])) do |course|
-      course.usd = parse_course['USD/RUB']
-      course.eur = parse_course['EUR/RUB']
-      course.date = parse_course['Date']
+    if !current_user.courses.exists?(course.id)
+      current_user.courses << course
     end
 
-    if one_course && !current_user.courses.exists?(one_course.id)
-      current_user.courses << one_course
-    end
     render nothing: true, status: 200
   end
 end
