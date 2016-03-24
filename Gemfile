@@ -43,6 +43,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'thumbs_up'
 gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'carrierwave-video'
+gem 'carrierwave-ffmpeg'
 gem 'simplecov', :require => false, :group => :test
 gem 'sunspot_rails'
 gem 'sunspot_solr'

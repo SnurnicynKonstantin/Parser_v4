@@ -22,4 +22,8 @@ class UserPolicy
     user
   end
 
+  def add_video?
+    user
+  end
+
 end
