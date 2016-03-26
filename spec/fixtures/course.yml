@@ -1,0 +1,1 @@
+data: '{"query":{"count":2,"created":"2016-03-25T09:23:01Z","lang":"ru-RU","results":{"rate":[{"id":"USDRUB","Name":"USD/RUB","Rate":"68.1309","Date":"3/25/2016","Time":"9:11am","Ask":"68.1439","Bid":"68.1309"},{"id":"EURRUB","Name":"EUR/RUB","Rate":"76.0716","Date":"3/25/2016","Time":"9:11am","Ask":"76.0895","Bid":"76.0536"}]}}}'
