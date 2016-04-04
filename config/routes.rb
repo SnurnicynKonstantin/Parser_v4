@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     member do
       post :vote_up
       post :vote_down
-      post :add_video
+      #post :add_video
     end
   end
 
@@ -28,4 +28,5 @@ Rails.application.routes.draw do
 
   post '/search', to: 'users#search', as: :search
 
+  post '/add_video', to: 'videos#create'
 end

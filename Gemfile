@@ -35,6 +35,7 @@ gem 'highcharts-rails'
 gem 'pundit'
 gem 'figaro'
 gem 'delayed_job_active_record'
+gem 'daemons'
 gem 'rspec-rails'
 gem 'rspec-mocks'
 gem 'shoulda-matchers', '3.0.1'
@@ -47,6 +48,8 @@ gem 'carrierwave-ffmpeg'
 gem 'simplecov', :require => false, :group => :test
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'carrierwave_backgrounder'
+gem 'factory_girl_rails'
 
 gem 'rails_12factor', group: :production
 
